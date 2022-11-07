@@ -1,19 +1,39 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import '../styles/App.css';
 const App = () => {
-//code here 
-  
 
-  
+  const [current, setCurrent] = useState('ON');
+  const [current2, setCurrent2] = useState('OFF');
+
+  const handleClick = (event) => {
+
+
+    if (event.target.innerText == 'ON') {
+      setCurrent(() => 'OFF');
+      setCurrent2(() => 'ON');
+    }
+    else {
+      setCurrent(() => 'ON');
+      setCurrent2(() => 'OFF');
+    }
+  }
+
+
+
+
+
+  console.log(current2);
+
+
   return (
     <div className="App">
       <button id="btn1" onClick={handleClick}>
-      {/* assign value for button 1 */}
+        {current}
       </button>
       <br />
       <br />
       <button id="btn2" onClick={handleClick}>
-        {/* assign value for button 2 */}
+        {current2}
       </button>
     </div>
   );
