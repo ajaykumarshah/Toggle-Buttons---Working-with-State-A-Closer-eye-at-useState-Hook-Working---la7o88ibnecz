@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import '../styles/App.css';
 const App = () => {
 
-  const [current, setCurrent] = useState('ON');
-  const [current2, setCurrent2] = useState('OFF');
+  const [current, setCurrent] = useState('OFF');
+  const [current2, setCurrent2] = useState('ON');
 
   const handleClick = (event) => {
 
