@@ -22,7 +22,7 @@ const App = () => {
 
 
 
-  console.log(current2);
+
 
 
   return (
