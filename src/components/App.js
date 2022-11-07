@@ -7,15 +7,27 @@ const App = () => {
 
   const handleClick = (event) => {
 
-
-    if (event.target.innerText == 'ON') {
-      setCurrent(() => 'OFF');
-      setCurrent2(() => 'ON');
+    if (event.target.id == 'btn1') {
+      if (event.target.innerText == 'ON' && event.target.id == 'btn1') {
+        setCurrent(() => 'OFF');
+        setCurrent2(() => 'ON');
+      }
+      else {
+        setCurrent(() => 'ON');
+        setCurrent2(() => 'OFF');
+      }
     }
     else {
-      setCurrent(() => 'ON');
-      setCurrent2(() => 'OFF');
+      if (event.target.value == 'OFF') {
+        setCurrent(() => 'OFF');
+        setCurrent2(() => 'ON');
+      }
+      else {
+        setCurrent(() => 'ON');
+        setCurrent2(() => 'OFF');
+      }
     }
+
   }
 
 
@@ -27,12 +39,12 @@ const App = () => {
 
   return (
     <div className="App">
-      <button id="btn1" onClick={handleClick}>
+      <button id="btn1" onClick={handleClick} value={current}  >
         {current}
       </button>
       <br />
       <br />
-      <button id="btn2" onClick={handleClick}>
+      <button id="btn2" onClick={handleClick} value={current2}   >
         {current2}
       </button>
     </div>
